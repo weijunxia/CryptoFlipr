@@ -7,8 +7,7 @@ let flips = 0
 let timer = document.querySelector('#timer')
 let seconds = 0
 let interval
-let cardOne = []
-let cardTwo = []
+let flippedCard = []
 
 // event listeners
 
@@ -32,8 +31,7 @@ function startGame() {
     cards[i].classList.add('visible')
   }
   // reset flip count
-  let flips = 0
-  startTimer()
+  flips = 0
   flipCounter()
 }
 
@@ -47,6 +45,29 @@ function startTimer() {
 function flipCounter() {
   flips++
   flipCount.innerHTML = flips
+  if (flips === 1) {
+    startTimer()
+  }
+}
+
+function flipCard() {
+  flippedCard.push(this)
+  if (flippedCard.length === 2) {
+    flipCounter()
+    if (flippedCard[0].type === flippedCard[1].type) {
+      flippedCard[0].classList.add('match', 'disabled')
+      flippedCard[1].classList.add('match', 'disabled')
+      flippedCard[0].classList.remove('match', 'disabled')
+      flippedCard[1].classList.remove('match', 'disabled')
+    } else {
+      unmatched()
+    }
+  }
+}
+
+// event listeners
+for (let i = 0; i < cards.length; i++) {
+  cards[i].addEventListener('click', flipCard)
 }
 
 newGame.addEventListener('click', startGame)
