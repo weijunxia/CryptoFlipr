@@ -8,20 +8,26 @@ let flips = 0
 let seconds = 0
 let interval
 let flippedCards = []
-
 // functions
-// Fisher-Yates shuffle
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[array[i], array[j]] = [array[j], array[i]]
-  }
-  return array
+// Fisher-Yates shuffle https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+// function shuffleArray(array) {
+//   for (let i = array.length - 1; i > 0; i--) {
+//     const j = Math.floor(Math.random() * (i + 1))
+//     ;[array[i], array[j]] = [array[j], array[i]]
+//   }
+//   return array
+// }
+
+function shuffle() {
+  cards.forEach((card) => {
+    let random = Math.floor(Math.random() * 16)
+    card.style.order = random
+  })
 }
 
 function startGame() {
   // shuffles deck
-  cards = shuffleArray(cards)
+  shuffle()
   for (let i = 0; i < cards.length; i++) {
     deck.innerHTML = ''
     cards[i].classList.add('visible')
@@ -57,16 +63,14 @@ function flipCard() {
   flipCounter()
   flippedCards[0].classList.add('disabled')
   if (flippedCards.length === 2) {
-    if (
-      flippedCards[0].dataset.framework === flippedCards[1].dataset.framework
-    ) {
+    if (flippedCards[0].dataset.crypto === flippedCards[1].dataset.crypto) {
       flippedCards[0].classList.add('match', 'disabled', 'flipped')
       flippedCards[1].classList.add('match', 'disabled', 'flipped')
       flippedCards[0].removeEventListener('click', flipCard)
       flippedCards[1].removeEventListener('click', flipCard)
       flippedCards = []
     } else {
-      flippedCards[0].classList.add()
+      flippedCards[0].classList.remove('disabled')
       flippedCards = []
     }
   }
@@ -74,7 +78,7 @@ function flipCard() {
 }
 
 // event listeners
-window.onload = addCardEventListeners()
+;(window.onload = addCardEventListeners()), shuffle()
 
 function addCardEventListeners() {
   for (let i = 0; i < cards.length; i++) {
