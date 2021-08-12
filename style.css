@@ -8,10 +8,14 @@
   visibility: visible;
 }
 
-.invisible {
+.match {
   visibility: collapse;
 }
 
-button {
-  rotate: ;
+.unmatch {
+  visibility: visible;
+}
+
+.disabled {
+  pointer-events: none;
 }

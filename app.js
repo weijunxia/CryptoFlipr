@@ -31,8 +31,8 @@ function startGame() {
     cards[i].classList.add('visible')
   }
   // reset flip count
+  timer = 0
   flips = 0
-  flipCounter()
 }
 
 function startTimer() {
@@ -52,8 +52,8 @@ function flipCounter() {
 
 function flipCard() {
   flippedCards.push(this)
+  flipCounter()
   if (flippedCards.length === 2) {
-    flipCounter()
     if (flippedCards[0].type === flippedCards[1].type) {
       flippedCards[0].classList.add('match', 'disabled')
       flippedCards[1].classList.add('match', 'disabled')
