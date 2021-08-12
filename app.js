@@ -9,10 +9,7 @@ let seconds = 0
 let interval
 let flippedCards = []
 
-// event listeners
-
 // functions
-
 // Durstenfeld shuffle https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -29,7 +26,10 @@ function startGame() {
     deck.innerHTML = ''
     cards[i].classList.remove('test')
     cards[i].classList.add('visible')
+    cards[i].classList.remove('disabled')
+    cards[i].classList.remove('match')
   }
+  cardEventListeners()
   // reset flip count
   timer = 0
   flips = 0
@@ -57,18 +57,22 @@ function flipCard() {
     if (flippedCards[0].type === flippedCards[1].type) {
       flippedCards[0].classList.add('match', 'disabled')
       flippedCards[1].classList.add('match', 'disabled')
-      flippedCards[0].classList.remove('match', 'disabled')
-      flippedCards[1].classList.remove('match', 'disabled')
+      flippedCards[0].removeEventListener('click', flipCard)
+      flippedCards[1].removeEventListener('click', flipCard)
       flippedCards = []
     } else {
       unmatched()
     }
   }
+  console.log(flippedCards)
 }
 
 // event listeners
-for (let i = 0; i < cards.length; i++) {
-  cards[i].addEventListener('click', flipCard)
+window.onload = cardEventListeners()
+function cardEventListeners() {
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].addEventListener('click', flipCard)
+  }
 }
 
 newGame.addEventListener('click', startGame)
