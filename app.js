@@ -64,8 +64,8 @@ function flipCard() {
   flippedCards[0].classList.add('disabled')
   if (flippedCards.length === 2) {
     if (flippedCards[0].dataset.crypto === flippedCards[1].dataset.crypto) {
-      flippedCards[0].classList.add('match', 'disabled', 'flipped')
-      flippedCards[1].classList.add('match', 'disabled', 'flipped')
+      flippedCards[0].classList.add('match', 'disabled')
+      flippedCards[1].classList.add('match', 'disabled')
       flippedCards[0].removeEventListener('click', flipCard)
       flippedCards[1].removeEventListener('click', flipCard)
       flippedCards = []
