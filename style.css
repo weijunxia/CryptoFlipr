@@ -1,3 +1,7 @@
+.deck {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+}
 .card {
   font-size: 50px;
   border: 5px black solid;
