@@ -9,15 +9,6 @@ let seconds = 0
 let interval
 let flippedCards = []
 // functions
-// Fisher-Yates shuffle https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-// function shuffleArray(array) {
-//   for (let i = array.length - 1; i > 0; i--) {
-//     const j = Math.floor(Math.random() * (i + 1))
-//     ;[array[i], array[j]] = [array[j], array[i]]
-//   }
-//   return array
-// }
-
 function shuffle() {
   cards.forEach((card) => {
     let random = Math.floor(Math.random() * 16)
@@ -61,11 +52,13 @@ function flipCounter() {
 function flipCard() {
   flippedCards.push(this)
   flipCounter()
-  flippedCards[0].classList.add('disabled')
+  flippedCards[0].classList.add('disabled', 'selected')
   if (flippedCards.length === 2) {
     if (flippedCards[0].dataset.crypto === flippedCards[1].dataset.crypto) {
       flippedCards[0].classList.add('match', 'disabled')
       flippedCards[1].classList.add('match', 'disabled')
+      flippedCards[0].classList.remove('selected')
+      flippedCards[1].classList.remove('selected')
       flippedCards[0].removeEventListener('click', flipCard)
       flippedCards[1].removeEventListener('click', flipCard)
       flippedCards = []
