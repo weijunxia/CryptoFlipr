@@ -104,7 +104,16 @@ button {
 }
 
 #learn {
-  flex: grid;
-  grid-template-columns: 1;
-  grid-template-rows: repeat(8, 12.5%);
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(4, 25%);
+}
+img.aboutImgs {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+}
+#cmc {
+  display: flex;
+  flex-direction: column-reverse;
 }
