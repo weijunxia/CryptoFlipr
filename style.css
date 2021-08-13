@@ -106,12 +106,14 @@ button {
 #learn {
   display: grid;
   grid-template-columns: repeat(4, 25%);
-  grid-template-rows: repeat(4, 25%);
+  grid-template-rows: repeat(2, 50%);
 }
 img.aboutImgs {
-  width: 100px;
-  height: 100px;
   padding: 10px;
+  border-radius: 10%;
+}
+.aboutButton {
+  font-size: 10px;
 }
 #cmc {
   display: flex;
