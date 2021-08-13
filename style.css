@@ -19,8 +19,8 @@ h1 {
 .scores {
   color: white;
   font-size: xx-large;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1;
 }
 body {
   background-image: url(/images/bg.jpg);
@@ -36,6 +36,8 @@ body {
 button {
   padding: 10px;
   margin: 10px;
+  border-radius: 10px;
+  font-size: 20px;
 }
 .deck {
   display: flex;

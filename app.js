@@ -30,7 +30,7 @@ function startGame() {
   addCardEventListeners()
   timer.innerHTML = 0
   clearInterval(seconds)
-  flipCount.innerHTML = 0
+  flips = 0
   totalCount = 0
   showCards()
 }
@@ -39,7 +39,7 @@ function showCards() {
     cards.forEach((card) => {
       card.classList.remove('flip', 'disabled')
     })
-  }, 3000)
+  }, 3500)
 }
 
 function startTimer() {
@@ -52,7 +52,7 @@ function startTimer() {
 
 function flipCounter() {
   flips++
-  flipCount.innerHTML = flips
+  flipCount.innerText = flips
 }
 
 function flipCard() {
