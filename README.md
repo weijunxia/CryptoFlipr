@@ -7,5 +7,20 @@
 ### **Description**
 Using vanilla JavaScript I have created a simple memory based card matching game where users will be asked to match the cards with their paris testing their memory. 
 
-### **Instructions**
+### **Technologies Used**
+![Technologies Used](https://i.imgur.com/EjvZJ3F.png)
 
+### **Instructions**
+Click on the matching cards by clicking on them in as few flips as possible!
+
+
+### **Future Updates**
+- [ ] High (low) score feature
+- [ ] Add Timer
+- [ ] Add more decks
+- [ ] Sound Cues based on how close user is to winning
+
+### **Credits**
+Technologies used: [image](https://github.com/mlackey9601/Tic-Tac-Toe/blob/main/README.md) 
+
+Flipping Animation: [video](https://www.youtube.com/watch?v=ZniVgo8U7ek)
