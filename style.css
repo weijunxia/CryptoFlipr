@@ -6,6 +6,19 @@
 
 h1 {
   text-align: center;
+  font-size: 75px;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+}
+.scores {
+  color: white;
+  font-size: xx-large;
+}
+body {
+  background-image: url(/images/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .scores {
   display: flex;
@@ -29,7 +42,7 @@ h1 {
   transform: scale(1);
   transform-style: preserve-3d;
   transition: transform 0.5s;
-  border: 1px black solid;
+  border: 1px lightgray solid;
   cursor: pointer;
 }
 .card:active {
@@ -37,9 +50,6 @@ h1 {
   transition: transform 0.2s;
 }
 .card.flip {
-  transform: rotateY(180deg);
-}
-.card.unflip {
   transform: rotateY(180deg);
 }
 
@@ -52,7 +62,7 @@ h1 {
   backface-visibility: hidden;
   border-radius: 20%;
 }
-.front {
+.back {
   transform: rotateY(180deg);
 }
 
@@ -66,7 +76,6 @@ h1 {
 .match {
   opacity: 75%;
   border: 2px solid black;
-  visibility: collapse;
 }
 
 .unmatch {

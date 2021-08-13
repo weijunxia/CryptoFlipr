@@ -4,12 +4,16 @@ let deck = [...document.getElementsByClassName('deck')]
 let newGame = document.getElementById('newGame')
 let timer = document.querySelector('#timer')
 let flipCount = document.getElementById('flipCount')
+let showAll = document.getElementsByClassName('showall')
 let flips = 0
 let seconds = 0
 let interval
 let flippedCards = []
 let totalCount = 0
 
+// showAll.addEventListener('click', () => {
+//   cards.forEach((card) => card.classList.add('flip'))
+// })
 // functions
 function shuffle() {
   cards.forEach((card) => {
@@ -21,6 +25,12 @@ function shuffle() {
 function startGame() {
   // shuffle deck
   shuffle()
+  setTimeout(function () {
+    deck.forEach((card) => {
+      card.classList.add('flip')
+      card.classList.remove('flip')
+    })
+  }, 2000)
   // remove classes
   for (let i = 0; i < cards.length; i++) {
     deck.innerHTML = ''
