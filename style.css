@@ -4,11 +4,6 @@
   box-sizing: border-box;
 }
 
-body {
-  height: 100vh;
-  display: flex;
-  background: grey;
-}
 h1 {
   text-align: center;
 }
@@ -24,6 +19,7 @@ h1 {
   height: 800px;
   margin: auto;
   perspective: 1000px;
+  border: 2px solid black;
 }
 .card {
   width: calc(25% - 10px);
@@ -33,6 +29,7 @@ h1 {
   transform: scale(1);
   transform-style: preserve-3d;
   transition: transform 0.5s;
+  border: 1px black solid;
   cursor: pointer;
 }
 .card:active {
@@ -55,7 +52,7 @@ h1 {
   backface-visibility: hidden;
   border-radius: 20%;
 }
-.back {
+.front {
   transform: rotateY(180deg);
 }
 

@@ -68,6 +68,7 @@ function flipCard() {
       checkWin()
     } else {
       flippedCards[0].classList.remove('disabled', 'selected', 'flip')
+      flippedCards[1].classList.remove('disabled', 'selected', 'flip')
       flippedCards = []
     }
   }
