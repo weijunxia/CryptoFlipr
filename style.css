@@ -20,7 +20,6 @@ h1 {
 .deck {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
   width: 800px;
   height: 800px;
   margin: auto;
@@ -30,7 +29,7 @@ h1 {
   width: calc(25% - 10px);
   height: calc(25% - 10px);
   margin: 5px;
-  position: relative;
+  position: sticky;
   transform: scale(1);
   transform-style: preserve-3d;
   transition: transform 0.5s;
@@ -43,6 +42,9 @@ h1 {
 .card.flip {
   transform: rotateY(180deg);
 }
+.card.unflip {
+  transform: rotateY(180deg);
+}
 
 .front,
 .back {
@@ -53,7 +55,7 @@ h1 {
   backface-visibility: hidden;
   border-radius: 20%;
 }
-.front {
+.back {
   transform: rotateY(180deg);
 }
 
@@ -67,6 +69,7 @@ h1 {
 .match {
   opacity: 75%;
   border: 2px solid black;
+  visibility: collapse;
 }
 
 .unmatch {
