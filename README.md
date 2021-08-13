@@ -5,7 +5,8 @@
 #### [LinkedIn](https://www.linkedin.com/in/w3i/) | [GitHub](https://github.com/weijunxia)
 
 ### **Description**
-Using vanilla JavaScript I have created a simple memory based card matching game where users will be asked to match the cards with their paris testing their memory. 
+Using vanilla JavaScript I have created a simple memory based card matching game where users will be asked to match the cards with their paris testing their memory.
+
 ![Live Site](CRYPTOFLIPR.surge.sh)
 
 ### **Technologies Used**
@@ -25,3 +26,5 @@ Click on the matching cards by clicking on them in as few flips as possible!
 Technologies used: [image](https://github.com/mlackey9601/Tic-Tac-Toe/blob/main/README.md) 
 
 Flipping Animation: [video](https://www.youtube.com/watch?v=ZniVgo8U7ek)
+
+CoinMarketCap Widget: [widget](https://coinmarketcap.com/widget/price-marquee/)
