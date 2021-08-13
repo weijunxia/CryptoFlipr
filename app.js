@@ -28,9 +28,9 @@ function startGame() {
     cards[i].classList.remove('match', 'selected', 'unflip')
   }
   addCardEventListeners()
-  timer.innerHTML = 0
   clearInterval(seconds)
   flips = 0
+  flipCount.innerHTML = flips
   totalCount = 0
   showCards()
 }
@@ -39,7 +39,7 @@ function showCards() {
     cards.forEach((card) => {
       card.classList.remove('flip', 'disabled')
     })
-  }, 3500)
+  }, 3000)
 }
 
 function startTimer() {
@@ -52,7 +52,7 @@ function startTimer() {
 
 function flipCounter() {
   flips++
-  flipCount.innerText = flips
+  flipCount.innerHTML = flips
 }
 
 function flipCard() {
@@ -71,22 +71,31 @@ function flipCard() {
       flippedCards = []
       checkWin()
     } else {
-      flippedCards[0].classList.remove('disabled', 'selected', 'flip')
-      flippedCards[1].classList.remove('disabled', 'selected', 'flip')
-      flippedCards = []
+      flippedCards[1].classList.add('flip')
+      cards.forEach((card) => {
+        card.classList.add('disabled')
+      })
+      setTimeout(function disableUnmatch() {
+        flippedCards[0].classList.remove('disabled', 'selected', 'flip')
+        flippedCards[1].classList.remove('disabled', 'selected', 'flip')
+        cards.forEach((card) => {
+          card.classList.remove('disabled')
+        })
+        flippedCards = []
+      }, 1000)
     }
   }
 }
 function checkWin() {
   if (totalCount === 8) {
     alert(
-      `Congratulations, you've won in ${flips} turns! Press Start to play again.`
+      `Congratulations, you've won in ${flips} turns! Press Start to play again. And learn more about these projects 🤠🚀`
     )
     clearInterval(timer)
   }
 }
 // event listeners
-;(window.onload = addCardEventListeners()), shuffle()
+window.onload = startGame()
 
 function addCardEventListeners() {
   for (let i = 0; i < cards.length; i++) {
