@@ -19,6 +19,8 @@ h1 {
 .scores {
   color: white;
   font-size: xx-large;
+  display: flex;
+  flex-direction: column;
 }
 body {
   background-image: url(/images/bg.jpg);
@@ -62,6 +64,9 @@ button {
 .card.flip {
   transform: rotateY(180deg);
 }
+.card.unflip {
+  transform: rotateY(180deg);
+}
 
 .front,
 .back {
@@ -84,7 +89,7 @@ button {
 }
 
 .match {
-  opacity: 75%;
+  opacity: 80%;
   border: 2px solid black;
 }
 

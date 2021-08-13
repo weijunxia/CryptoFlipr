@@ -4,16 +4,12 @@ let deck = [...document.getElementsByClassName('deck')]
 let newGame = document.getElementById('newGame')
 let timer = document.querySelector('#timer')
 let flipCount = document.getElementById('flipCount')
-let showAll = document.getElementsByClassName('showall')
 let flips = 0
 let seconds = 0
 let interval
 let flippedCards = []
 let totalCount = 0
 
-// showAll.addEventListener('click', () => {
-//   cards.forEach((card) => card.classList.add('flip'))
-// })
 // functions
 function shuffle() {
   cards.forEach((card) => {
@@ -25,24 +21,25 @@ function shuffle() {
 function startGame() {
   // shuffle deck
   shuffle()
-  setTimeout(function () {
-    deck.forEach((card) => {
-      card.classList.add('flip')
-      card.classList.remove('flip')
-    })
-  }, 2000)
   // remove classes
   for (let i = 0; i < cards.length; i++) {
     deck.innerHTML = ''
-    cards[i].classList.add('visible')
-    cards[i].classList.remove('flip', 'disabled', 'match', 'selected', 'unflip')
+    cards[i].classList.add('visible', 'flip', 'disabled')
+    cards[i].classList.remove('match', 'selected', 'unflip')
   }
   addCardEventListeners()
   timer.innerHTML = 0
   clearInterval(seconds)
-  flips = 0
-  flipCount.innerHTML = flips
+  flipCount.innerHTML = 0
   totalCount = 0
+  showCards()
+}
+function showCards() {
+  setTimeout(() => {
+    cards.forEach((card) => {
+      card.classList.remove('flip', 'disabled')
+    })
+  }, 3000)
 }
 
 function startTimer() {
@@ -56,9 +53,6 @@ function startTimer() {
 function flipCounter() {
   flips++
   flipCount.innerHTML = flips
-  if (flips === 1) {
-    startTimer()
-  }
 }
 
 function flipCard() {
@@ -70,8 +64,8 @@ function flipCard() {
       totalCount++
       flippedCards[0].classList.add('match', 'disabled')
       flippedCards[1].classList.add('match', 'disabled')
-      flippedCards[0].classList.remove('selected')
-      flippedCards[1].classList.remove('selected')
+      flippedCards[0].classList.remove('selected', 'flip')
+      flippedCards[1].classList.remove('selected', 'flip')
       flippedCards[0].removeEventListener('click', flipCard)
       flippedCards[1].removeEventListener('click', flipCard)
       flippedCards = []
@@ -85,8 +79,10 @@ function flipCard() {
 }
 function checkWin() {
   if (totalCount === 8) {
-    alert('you win')
-    clearInterval(interval)
+    alert(
+      `Congratulations, you've won in ${flips} turns! Press Start to play again.`
+    )
+    clearInterval(timer)
   }
 }
 // event listeners

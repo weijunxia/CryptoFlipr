@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Memory Card Game</title>
-</head>
-<h1>Flippr</h1>
-<section class="scores">
-  <span id="flipCount">0</span> Flip(s)
-  <div id="timer">
-  
-  </div>
-  <button id='newGame'>Start</button>
-  <button class='showall'>Show All</button>
-</section>
-<body>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Memory Card Game</title>
+  </head>
+  <h1>Flippr</h1>
+  <section class="scores">
+    Flip Count: <span id="flipCount">0</span>
+    <div id="timer">
+      
+    </div>
+    <button id='newGame'>Start</button>
+    <button id='learnMore'>Click Here Learn More About these Crypto Projects!</button>
+    
+    
+  </section>
+  <body>
   <section class='deck'>
     <div id='0' class="card" data-crypto="bitcoin">
       <img class="front" src="/images/coinbase.png" alt="coinbase logo">
@@ -83,7 +85,6 @@
       <img class="back" src="/images/Vidya.png" alt="vidya logo">
     </div>
   </section>
-  
   <script src="app.js"></script>
 </body>
 </html>
