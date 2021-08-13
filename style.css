@@ -25,7 +25,8 @@ h1 {
 body {
   background-image: url(/images/bg.jpg);
   background-repeat: no-repeat;
-  background-size: 110%;
+
+  background-size: cover;
 }
 .scores {
   display: flex;
@@ -106,6 +107,7 @@ p {
   text-align: center;
   padding: 20px;
   font-size: 25px;
+  color: white;
 }
 #learn {
   display: grid;
@@ -114,6 +116,7 @@ p {
 }
 img.aboutImgs {
   padding: 10px;
+  margin: 20px;
   border-radius: 10%;
   margin: auto;
 }
