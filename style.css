@@ -111,11 +111,14 @@ button {
 img.aboutImgs {
   padding: 10px;
   border-radius: 10%;
+  margin: auto;
 }
 .aboutButton {
   font-size: 10px;
 }
-#cmc {
+
+#widget {
   display: flex;
   flex-direction: column-reverse;
+  height: 500px;
 }
