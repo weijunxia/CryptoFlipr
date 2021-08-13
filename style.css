@@ -102,3 +102,9 @@ button {
 .disabled {
   pointer-events: none;
 }
+
+#learn {
+  flex: grid;
+  grid-template-columns: 1;
+  grid-template-rows: repeat(8, 12.5%);
+}
