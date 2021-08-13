@@ -59,17 +59,22 @@ function flipCard() {
   flippedCards.push(this)
   flipCounter()
   flippedCards[0].classList.add('disabled', 'selected', 'flip')
+  flippedCards[1].classList.add('disabled', 'selected', 'flip')
   if (flippedCards.length === 2) {
     if (flippedCards[0].dataset.crypto === flippedCards[1].dataset.crypto) {
-      totalCount++
-      flippedCards[0].classList.add('match', 'disabled')
-      flippedCards[1].classList.add('match', 'disabled')
-      flippedCards[0].classList.remove('selected', 'flip')
-      flippedCards[1].classList.remove('selected', 'flip')
-      flippedCards[0].removeEventListener('click', flipCard)
-      flippedCards[1].removeEventListener('click', flipCard)
-      flippedCards = []
-      checkWin()
+      setTimeout(() => {
+        totalCount++
+        flippedCards[0].classList.add('match', 'disabled')
+        flippedCards[1].classList.add('match', 'disabled')
+        flippedCards[0].classList.remove('selected', 'flip')
+        flippedCards[1].classList.remove('selected', 'flip')
+        flippedCards[0].removeEventListener('click', flipCard)
+        flippedCards[1].removeEventListener('click', flipCard)
+      }, 1000)
+      setTimeout(() => {
+        flippedCards = []
+        checkWin()
+      }, 1000)
     } else {
       flippedCards[1].classList.add('flip')
       cards.forEach((card) => {
@@ -89,7 +94,7 @@ function flipCard() {
 function checkWin() {
   if (totalCount === 8) {
     alert(
-      `Congratulations, you've won in ${flips} turns! Press Start to play again. And learn more about these projects 🤠🚀`
+      `Congratulations, you've won in ${flips} turns! Press Start to play again. And learn more about these projects 🤠 🚀`
     )
     clearInterval(timer)
   }

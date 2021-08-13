@@ -78,6 +78,7 @@ button {
   backface-visibility: hidden;
   border-radius: 20%;
 }
+
 .back {
   transform: rotateY(180deg);
 }
@@ -85,23 +86,19 @@ button {
 .selected {
   border: dotted 2px black;
 }
-.visible {
-  visibility: visible;
-}
 
 .match {
   opacity: 80%;
   border: 2px solid black;
-  backface-visibility: visible;
 }
 
 .unmatch {
   visibility: visible;
 }
 
-/* .disabled {
+.disabled {
   pointer-events: none;
-} */
+}
 p {
   text-align: center;
   padding: 20px;
