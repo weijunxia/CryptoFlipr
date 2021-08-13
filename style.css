@@ -102,7 +102,11 @@ button {
 .disabled {
   pointer-events: none;
 }
-
+p {
+  text-align: center;
+  padding: 20px;
+  font-size: 25px;
+}
 #learn {
   display: grid;
   grid-template-columns: repeat(4, 25%);
