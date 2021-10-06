@@ -7,7 +7,7 @@
 ### **Description**
 Using vanilla JavaScript I have created a simple memory based card matching game where users will be asked to match the cards with their paris testing their memory.
 
-![Live Site](CRYPTOFLIPR.surge.sh)
+![Live Site](https://cryptoflipr.surge.sh/)
 
 ### **Technologies Used**
 ![Technologies Used](https://i.imgur.com/EjvZJ3F.png)
